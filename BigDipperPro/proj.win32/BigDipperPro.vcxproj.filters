@@ -10,6 +10,15 @@
     <Filter Include="src">
       <UniqueIdentifier>{bb6c862e-70e9-49d9-81b7-3829a6f50471}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\nav">
+      <UniqueIdentifier>{6e0a7e07-a3ae-4473-bf11-e695f65c024e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\nav\algorithm">
+      <UniqueIdentifier>{8c90be8c-b7f6-4400-b7eb-9bc12556b618}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\nav\structure">
+      <UniqueIdentifier>{874f6730-5b27-4b63-bf5a-a0380b8153ed}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -21,6 +30,15 @@
     <ClCompile Include="..\Classes\HelloWorldScene.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\nav\algorithm\NVDelaunayAlgorithm.cpp">
+      <Filter>src\nav\algorithm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\nav\algorithm\NVVectorAlgorithm.cpp">
+      <Filter>src\nav\algorithm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\nav\structure\NVGeometry.cpp">
+      <Filter>src\nav\structure</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -31,6 +49,21 @@
     </ClInclude>
     <ClInclude Include="..\Classes\HelloWorldScene.h">
       <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\nav\algorithm\NVDelaunayAlgorithm.h">
+      <Filter>src\nav\algorithm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\nav\algorithm\NVVectorAlgorithm.h">
+      <Filter>src\nav\algorithm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\nav\structure\NVGeometry.h">
+      <Filter>src\nav\structure</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\nav\Nav.h">
+      <Filter>src\nav</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\nav\NavMacro.h">
+      <Filter>src\nav</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
