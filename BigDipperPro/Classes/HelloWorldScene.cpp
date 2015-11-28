@@ -33,11 +33,14 @@ bool HelloWorld::init()
     Size visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
-
-	cocos2d::Point p(153.1f, 0);
-	float d = CC_DEGREES_TO_RADIANS(90.0f);
-	p.rotate(cocos2d::Point(0, 0), d);
-	CCLOG("x=%f, y=%f", p.x, p.y);
+	nav::Triangle t(cocos2d::Point(2, 4), cocos2d::Point(4, 0), cocos2d::Point(0, 0));
+	cocos2d::Point p(5, 0);
+	float b = nav::VectorAlgorithm::inflectionPoint(t.getA(), t.getB(), p);
+	CCLOG("%f", b);
+	b = nav::VectorAlgorithm::inflectionPoint(t.getB(), t.getC(), p);
+	CCLOG("%f", b);
+	b = nav::VectorAlgorithm::inflectionPoint(t.getC(), t.getA(), p);
+	CCLOG("%f", b);
 
     return true;
 }

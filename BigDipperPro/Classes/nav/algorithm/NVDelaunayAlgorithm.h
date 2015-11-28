@@ -15,6 +15,10 @@ public:
 	static nav::Circle calculateCircleByRect(const cocos2d::Rect&rect);
 	/******通过一个圆获得一个外接于圆的正等边三角形，所有内角都为60度******/
 	static nav::Triangle calculateTriangleByCircle(const nav::Circle&circle);
+	/****************检测点是否在三角形内***************/
+	static bool checkPointInTriangle(const cocos2d::Point&p, const nav::Triangle& triangle);
+	/**************检测点是否在三角形列表内****************/
+	static std::vector<Triangle> checkPointInTriangles(const cocos2d::Point&p, const std::vector<Triangle>& triangles);
 };
 
 NS_NV_END;

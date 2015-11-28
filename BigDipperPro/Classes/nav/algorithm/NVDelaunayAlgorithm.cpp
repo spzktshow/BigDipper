@@ -1,4 +1,5 @@
 ﻿#include "NVDelaunayAlgorithm.h"
+#include "NVVectorAlgorithm.h"
 US_NS_NV;
 
 /*************DelaunayAlgorithm*****************/
@@ -70,6 +71,40 @@ nav::Triangle DelaunayAlgorithm::calculateTriangleByCircle(const nav::Circle&cir
 	cocos2d::Point c(length, 0);
 	c.rotate(cocos2d::Point(0, 0), r);
 	c = c + circle.getCenter();
-	nav::Triangle triangle(a, b, c);
+	nav::Triangle triangle(a, c, b);
 	return triangle;
+}
+
+std::vector<Triangle> DelaunayAlgorithm::checkPointInTriangles(const cocos2d::Point&p, const std::vector<Triangle>& triangles)
+{
+	std::vector<Triangle> results;
+	for (auto triangle : triangles)
+	{
+		if (checkPointInTriangle(p, triangle))
+		{
+			results.push_back(triangle);
+		}
+	}
+	return results;
+}
+
+bool DelaunayAlgorithm::checkPointInTriangle(const cocos2d::Point&p, const nav::Triangle& triangle)
+{
+	//ab cross bp
+	float result = VectorAlgorithm::inflectionPoint(triangle.getA(), triangle.getB(), p);
+	if (result >= 0)
+	{
+		//bc cross cp
+		result = VectorAlgorithm::inflectionPoint(triangle.getB(), triangle.getC(), p);
+		if (result >= 0)
+		{
+			//ca cross ap
+			result = VectorAlgorithm::inflectionPoint(triangle.getC(), triangle.getA(), p);
+			if (result >= 0)
+			{
+				return true;
+			}
+		}
+	}
+	return false;
 }

@@ -31,6 +31,7 @@ protected:
 	float _r;
 };
 
+/************三角形由abc三个点组成，abc3个点顺时针排列**********/
 class Triangle
 {
 public:
