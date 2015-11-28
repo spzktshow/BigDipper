@@ -9,11 +9,14 @@ NS_NV_BEGAN
 class VectorAlgorithm
 {
 public:
+	/******矢量点乘,得到的结果是个标量，用于确定夹角******/
+	static float dotProduct(const cocos2d::Vec2&P, const cocos2d::Vec2&Q);
+	/*******运算两个向量的夹角*********/
+	static float calculateDegree(const cocos2d::Vec2&P, const cocos2d::Vec2&Q);
 	/***矢量叉积***/
 	/**P × Q = x1*y2 - x2*y1**/
 	/**P × Q = -(Q × P) and P ×(-Q) = -(P × Q)**/
 	static float crossProduct(const cocos2d::Point&P, const cocos2d::Point&Q);
-
 	/***
 	折线段的拐向判断方法可以直接由矢量叉积的性质推出。对于有公共端点的线段p0p1和p1p2，通过计算(p2 - p0) × (p1 - p0)的符号便可以确定折线段的拐向：
 	*若(p2 - p0) × (p1 - p0) > 0,则p0p1在p1点拐向右侧后得到p1p2。

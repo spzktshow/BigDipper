@@ -39,6 +39,9 @@
     <ClCompile Include="..\Classes\nav\structure\NVGeometry.cpp">
       <Filter>src\nav\structure</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\nav\algorithm\NVGeometryAlgorithm.cpp">
+      <Filter>src\nav\algorithm</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -64,6 +67,9 @@
     </ClInclude>
     <ClInclude Include="..\Classes\nav\NavMacro.h">
       <Filter>src\nav</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\nav\algorithm\NVGeometryAlgorithm.h">
+      <Filter>src\nav\algorithm</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -2,6 +2,16 @@
 
 US_NS_NV;
 /**********VectorAlgorithm************/
+float VectorAlgorithm::dotProduct(const cocos2d::Vec2&P, const cocos2d::Vec2&Q)
+{
+	return P.x * Q.x + P.y * Q.y;
+}
+
+float VectorAlgorithm::calculateDegree(const cocos2d::Vec2&P, const cocos2d::Vec2&Q)
+{
+	return 0.0f;
+}
+
 float VectorAlgorithm::crossProduct(const cocos2d::Point&P, const cocos2d::Point&Q)
 {
 	return P.x * Q.y - Q.x * P.y;
